@@ -811,7 +811,8 @@ class Purchases @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE) intern
         fetchAndCacheOfferings(appUserID)
     }
 
-    private fun fetchAndCachePurchaserInfo(
+    // Some workflows require real-time purchaser info, not cached
+    fun fetchAndCachePurchaserInfo(
         appUserID: String,
         completion: ReceivePurchaserInfoListener? = null
     ) {
